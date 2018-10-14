@@ -1,20 +1,11 @@
 import React from 'react'
 import { Font } from 'expo'
-import styled, { ThemeProvider } from 'styled-components'
+import { ThemeProvider } from 'styled-components'
 
 import theme from './config/theme'
 
-const Container = styled.View`
-  flex: 1;
-  background-color: ${props => props.theme.colors.primary};
-  align-items: center;
-  justify-content: center;
-`
+import AppNavigator from './Navigator'
 
-const StyledText = styled.Text`
-  color: ${props => props.theme.colors.sliderText}
-  font-family: 'cubano-regular'
-`
 
 export default class App extends React.Component {
   constructor (props) {
@@ -32,15 +23,9 @@ export default class App extends React.Component {
     this.setState({ isAppReady: true })
   }
   render() {
-    return (
+    return this.state.isAppReady && (
       <ThemeProvider theme={theme}>
-        <Container>
-          {
-            this.state.isAppReady && (
-              <StyledText>Hello Delivery!</StyledText>
-            )
-          }
-        </Container>
+        <AppNavigator />
       </ThemeProvider>
     )
   }
