@@ -1,18 +1,21 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import { StyleSheet, Text, View } from 'react-native'
 import { Font } from 'expo'
 
 export default class App extends React.Component {
-  state = {
-    isAppReady: false
+  constructor (props) {
+    super(props)
+    this.state = {
+      isAppReady: false
+    }
   }
   async componentDidMount() {
     await Font.loadAsync({
       'cubano-regular': require('./assets/fonts/cubano-regular.ttf'),
       'bariol-regular': require('./assets/fonts/bariol-regular.ttf'),
       'bariol-bold': require('./assets/fonts/bariol-bold.ttf')
-    });
-    this.setState({ isAppReady: true });
+    })
+    this.setState({ isAppReady: true })
   }
   render() {
     return (
@@ -23,7 +26,7 @@ export default class App extends React.Component {
           )
         }
       </View>
-    );
+    )
   }
 }
 
@@ -37,4 +40,4 @@ const styles = StyleSheet.create({
   text: {
     fontFamily: 'cubano-regular',
   }
-});
+})
