@@ -1,6 +1,20 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
 import { Font } from 'expo'
+import styled, { ThemeProvider } from 'styled-components'
+
+import theme from './config/theme'
+
+const Container = styled.View`
+  flex: 1;
+  background-color: ${props => props.theme.colors.primary};
+  align-items: center;
+  justify-content: center;
+`
+
+const StyledText = styled.Text`
+  color: ${props => props.theme.colors.sliderText}
+  font-family: 'cubano-regular'
+`
 
 export default class App extends React.Component {
   constructor (props) {
@@ -19,25 +33,15 @@ export default class App extends React.Component {
   }
   render() {
     return (
-      <View style={styles.container}>
-        {
-          this.state.isAppReady && (
-            <Text style={styles.text}>Hello Delivery!</Text>
-          )
-        }
-      </View>
+      <ThemeProvider theme={theme}>
+        <Container>
+          {
+            this.state.isAppReady && (
+              <StyledText>Hello Delivery!</StyledText>
+            )
+          }
+        </Container>
+      </ThemeProvider>
     )
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  text: {
-    fontFamily: 'cubano-regular',
-  }
-})
