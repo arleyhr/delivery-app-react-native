@@ -1,8 +1,11 @@
 import styled, { css } from 'styled-components'
 import { prop, ifProp } from 'styled-tools'
+import { PixelRatio } from 'react-native'
+
+const tabBarHeight = PixelRatio.getPixelSizeForLayoutSize(20)
 
 export const TabButton = styled.TouchableOpacity`
-  height: 50;
+  height: ${tabBarHeight};
   justify-content: center;
   margin-bottom: -5;
   ${ifProp('actived', css`
@@ -30,7 +33,7 @@ export const TabsContainer = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  height: 50;
+  height: ${tabBarHeight};
   padding-horizontal: 15;
   position: relative;
   z-index: 1;
