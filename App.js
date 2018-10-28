@@ -2,9 +2,9 @@ import React from 'react'
 import { Font } from 'expo'
 import { ThemeProvider } from 'styled-components'
 
-import theme from './config/theme'
+import theme from './src/config/theme'
 
-import AppNavigator from './Navigator'
+import AppNavigator from './src/Navigator'
 
 
 export default class App extends React.Component {
@@ -16,9 +16,9 @@ export default class App extends React.Component {
   }
   async componentDidMount() {
     await Font.loadAsync({
-      'cubano-regular': require('./assets/fonts/cubano-regular.ttf'),
-      'bariol-regular': require('./assets/fonts/bariol-regular.ttf'),
-      'bariol-bold': require('./assets/fonts/bariol-bold.ttf')
+      'cubano-regular': require('./src/assets/fonts/cubano-regular.ttf'),
+      'bariol-regular': require('./src/assets/fonts/bariol-regular.ttf'),
+      'bariol-bold': require('./src/assets/fonts/bariol-bold.ttf')
     })
     this.setState({ isAppReady: true })
   }
