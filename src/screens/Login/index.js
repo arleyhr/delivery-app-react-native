@@ -26,7 +26,7 @@ class LoginScreen extends React.Component {
 
     return (
       <SafeAreaView>
-        <Container behavior='padding'>
+        <Container behavior="padding">
           <FormContainer>
             <Logo source={logo} resizeMode="contain" />
             <InputContainer>
