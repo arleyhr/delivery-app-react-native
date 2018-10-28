@@ -1,9 +1,8 @@
 import styled, { css } from 'styled-components'
 import { ifProp, prop } from 'styled-tools'
 
-import { PixelRatio } from 'react-native'
-
-const buttonHeight = PixelRatio.getPixelSizeForLayoutSize(17)
+const buttonHeight = 40
+const textSize = 14
 
 export const Container = styled.View`
   margin-vertical: 4;
@@ -41,4 +40,5 @@ export const Button = styled.View`
 export const Label = styled.Text`
   color: white;
   font-family: 'cubano-regular'
+  font-size: ${textSize};
 `

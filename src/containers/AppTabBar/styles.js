@@ -1,8 +1,7 @@
 import styled, { css } from 'styled-components'
 import { prop, ifProp } from 'styled-tools'
-import { PixelRatio } from 'react-native'
 
-const tabBarHeight = PixelRatio.getPixelSizeForLayoutSize(20)
+const tabBarHeight = 45
 
 export const TabButton = styled.TouchableOpacity`
   height: ${tabBarHeight};
