@@ -5,7 +5,11 @@ import {
   SafeAreaView
  } from 'react-navigation'
 
- import Button from '../components/Button'
+import Button from '@components/Button'
+
+import {
+  Container
+} from './styles'
 
 class LoginScreen extends React.Component {
   static navigationOptions = {
@@ -23,15 +27,18 @@ class LoginScreen extends React.Component {
 
     return (
       <SafeAreaView>
-        <Button
-          handlePress={() => {}}
-          text='Orders'
-        />
-        <Button
-          handlePress={moveToHome}
-          text='Login'
-          secondary
-        />
+        <Container>
+          <Button
+            handlePress={() => {}}
+            text='Orders'
+          />
+          <Button
+            handlePress={moveToHome}
+            text='Login'
+            secondary
+          />
+        </Container>
+
       </SafeAreaView>
     )
   }

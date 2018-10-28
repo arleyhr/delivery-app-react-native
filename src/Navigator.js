@@ -1,12 +1,12 @@
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation'
 
-import AppTabBar from './containers/AppTabBar'
+import AppTabBar from '@containers/AppTabBar'
 
-import Login from './screens/Login'
-import Home from './screens/Home'
-import Menu from './screens/Menu'
-import OurStories from './screens/OurStories'
-import ContactUs from './screens/ContactUs'
+import Login from '@screens/Login'
+import Home from '@screens/Home'
+import Menu from '@screens/Menu'
+import OurStories from '@screens/OurStories'
+import ContactUs from '@screens/ContactUs'
 
 const TabsNavigation = createBottomTabNavigator(
   {
